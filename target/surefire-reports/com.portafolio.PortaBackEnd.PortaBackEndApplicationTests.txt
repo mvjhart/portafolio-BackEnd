@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.portafolio.PortaBackEnd.PortaBackEndApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.904 s - in com.portafolio.PortaBackEnd.PortaBackEndApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.414 s - in com.portafolio.PortaBackEnd.PortaBackEndApplicationTests
