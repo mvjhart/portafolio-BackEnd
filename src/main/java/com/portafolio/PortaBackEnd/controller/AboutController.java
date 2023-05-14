@@ -22,7 +22,7 @@ public class AboutController {
     @Autowired
     IAboutService aboutServ;
    
-    @CrossOrigin(origins = "http://localhost:4200/about")
+//    @CrossOrigin(origins = "http://localhost:4200/")
     @GetMapping("/ver/{id}")
     @ResponseBody 
     public About verAbout(@PathVariable Integer id){
@@ -30,7 +30,7 @@ public class AboutController {
     }
     
     
-    @CrossOrigin(origins = "http://localhost:4200/about")   
+//    @CrossOrigin(origins = "http://localhost:4200/")   
     @PutMapping("/update/{id}")
     public void updateAbout(@PathVariable Integer id,@RequestBody About a){
         aboutServ.updateAbout(id, a);

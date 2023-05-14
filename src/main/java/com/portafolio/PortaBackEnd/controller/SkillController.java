@@ -23,26 +23,26 @@ public class SkillController {
     @Autowired
     ISkillService skillServ;
 
-    @CrossOrigin(origins = "http://localhost:4200/about")
+//    @CrossOrigin(origins = "http://localhost:4200/")
     @GetMapping("/lista")
     @ResponseBody  
     public List<Skill> verSkills(){
         return skillServ.verSkills();
     }
    
-    @CrossOrigin(origins = "http://localhost:4200/about")    
+//    @CrossOrigin(origins = "http://localhost:4200/")    
     @PostMapping("/agregar")
    public void agregarSkill(@RequestBody Skill s){
        skillServ.agregarSkill(s);
    }
   
-    @CrossOrigin(origins = "http://localhost:4200/about")       
+//    @CrossOrigin(origins = "http://localhost:4200/")       
     @DeleteMapping ("/borrar/{id}")
    public void borrarSkill(@PathVariable Integer id){
        skillServ.borrarSkill(id);
    }
  
-    @CrossOrigin(origins = "http://localhost:4200/about")   
+//    @CrossOrigin(origins = "http://localhost:4200/")   
     @PutMapping("/update/{id}")
    public void updateSkill(@PathVariable Integer id,@RequestBody Skill s){
        skillServ.updateSkill(id, s);
