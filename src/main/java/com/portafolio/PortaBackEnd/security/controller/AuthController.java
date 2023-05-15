@@ -13,7 +13,6 @@ import com.portafolio.PortaBackEnd.security.service.RolService;
 import com.portafolio.PortaBackEnd.security.service.UsuarioService;
 import java.util.HashSet;
 import java.util.Set;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -51,7 +50,7 @@ public class AuthController {
     JwtProvider jwtProvider;
 
     @PostMapping("/nuevo")
-    public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult){
+    public ResponseEntity<?> nuevo(@RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult){
         if(bindingResult.hasErrors())
             return new ResponseEntity(new Mensaje("campos mal puestos o email inválido"), HttpStatus.BAD_REQUEST);
         if(usuarioService.existsByNombreUsuario(nuevoUsuario.getNombreUsuario()))
@@ -72,7 +71,7 @@ public class AuthController {
 
     @CrossOrigin(origins = "http://localhost:4200/login")
     @PostMapping("/login")
-    public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
+    public ResponseEntity<JwtDto> login(@RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
         if(bindingResult.hasErrors())
             return new ResponseEntity(new Mensaje("campos mal puestos"), HttpStatus.BAD_REQUEST);
         Authentication authentication =
